@@ -57,7 +57,7 @@ const TagUser: React.FC<IPROPS> = ({ user }) => {
         onClick={onOpen}
         aria-label=""
       />
-      {taggedUser.length > 0 && taggedUser.length}
+      <div className="mt-2">{taggedUser.length > 0 && taggedUser.length}</div>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
