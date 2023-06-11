@@ -7,7 +7,12 @@ interface IPROPS {
 }
 const UsernameButton: React.FC<IPROPS> = ({ user }) => {
   return (
-    <Button as={Link} to={`/user/${user.id}`} colorScheme="teal" variant="link">
+    <Button
+      as={Link}
+      to={`/user/${user.id && user.id}`}
+      colorScheme="teal"
+      variant="link"
+    >
       {user.username}
     </Button>
   );
