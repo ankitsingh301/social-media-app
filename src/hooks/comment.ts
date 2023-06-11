@@ -12,7 +12,13 @@ import { db } from "lib/firebase";
 import { useState } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
-export function useAddComment({ postID, uid }: { postID: any; uid: any }) {
+export function useAddComment({
+  postID,
+  uid,
+}: {
+  postID: string;
+  uid: string;
+}) {
   const [isLoading, setLoading] = useState(false);
   const toast = useToast();
 
@@ -37,7 +43,7 @@ export function useAddComment({ postID, uid }: { postID: any; uid: any }) {
   return { addComment, isLoading };
 }
 
-export function useComments(postID: any) {
+export function useComments(postID: string) {
   const q = query(
     collection(db, "comments"),
     where("postID", "==", postID),

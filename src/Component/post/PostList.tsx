@@ -1,32 +1,23 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  Center,
-  Divider,
-  Flex,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Center, Divider, Text } from "@chakra-ui/react";
 import { usePosts } from "hooks/posts";
 import { formatDistanceToNow } from "date-fns";
 import ToggleLike from "./ToggleLike";
 import { useUser } from "hooks/user";
 import Comment from "Component/comment";
 import NewComment from "Component/comment/NewComment";
-import { useSelector } from "react-redux";
 import CommentList from "Component/comment/CommentList";
 import Avatar from "utils/Avatar";
 import UsernameButton from "utils/UserNameButton";
 import Tags from "./Tags";
 import PostCard from "./PostCard";
+import { useDispatch, useSelector } from "react-redux";
 
 interface IPROPS {
   userId: any;
 }
 
 const PostList: React.FC<IPROPS> = ({ userId }) => {
+  const dispatch = useDispatch();
   const toggleCommentBox = useSelector(
     (state: any) => state.SocialMediaState.showCommentBox
   );
@@ -45,10 +36,9 @@ const PostList: React.FC<IPROPS> = ({ userId }) => {
               </Text>
               <Center>
                 <Box
-                  className="w-4/5 mb-4"
+                  className="w-4/5 mb-4 md:p-8"
                   borderWidth="1px"
                   borderRadius="lg"
-                  p="9"
                   bg="white"
                 >
                   <div>

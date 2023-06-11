@@ -12,7 +12,7 @@ const CommentItem: React.FC<IPROPS> = ({ comment }) => {
   const { user } = useUser(uid);
 
   return (
-    <Box px="4" py="2" maxW="600px" mx="auto" textAlign="left">
+    <Box px="4" py="2" textAlign="left">
       <Flex pb="2">
         <Avatar user={user} size="sm" />
         <Box flex="1" ml="4">
@@ -24,9 +24,10 @@ const CommentItem: React.FC<IPROPS> = ({ comment }) => {
               </Text>
             </Box>
           </Flex>
-          <Box pt="2" fontSize="sm">
+
+          <div className="w-48 md:w-96">
             <Text>{text}</Text>
-          </Box>
+          </div>
         </Box>
       </Flex>
     </Box>
