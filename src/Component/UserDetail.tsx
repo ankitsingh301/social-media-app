@@ -8,12 +8,15 @@ interface IPROPS {
 }
 
 const UserDetail: React.FC<IPROPS> = ({ user }) => {
-  const { posts } = usePosts(user.id);
+  const { posts } = usePosts(user.id && user.id);
   return (
     <Flex p={["4", "6"]} pos="relative" align="center">
       <Avatar size="2xl" user={user} />
       <Stack ml="10">
         <Text fontSize="2xl">{user.username}</Text>
+
+        {user.bio && <Text w="100%">{user.bio}</Text>}
+
         <HStack spacing="10">
           <Text color="gray.700" fontSize={["sm", "lg"]}>
             Posts: {posts?.length}
