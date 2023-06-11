@@ -11,7 +11,7 @@ const Avatar: React.FC<IPROPS> = ({ user, size = "xl" }) => {
   return (
     <ChakraAvatar
       as={Link}
-      to={`/user/${user.id}`}
+      to={`/user/${user.id && user.id}`}
       name={user.username}
       size={size}
       src={user.avatar}
