@@ -9,11 +9,11 @@ const UsernameButton: React.FC<IPROPS> = ({ user }) => {
   return (
     <Button
       as={Link}
-      to={`/user/${user.id && user.id}`}
+      to={`/user/${user?.id}`}
       colorScheme="teal"
       variant="link"
     >
-      {user.username}
+      {user?.username}
     </Button>
   );
 };
